@@ -58,7 +58,8 @@ function created_signed_embed_url(options) {
   string_to_sign += json_external_group_id + '\n';
   string_to_sign += json_user_attributes + '\n';
   string_to_sign += json_access_filters;
-
+  
+  // creating signature
   const signature = crypto
     .createHmac('sha1', secret)
     .update(forceUnicodeEncoding(string_to_sign))
